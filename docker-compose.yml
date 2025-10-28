@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0.36
+    container_name: spring-boot-assignment-mysql
+    environment:
+      MYSQL_DATABASE: postdb
+      MYSQL_USER: post_user
+      MYSQL_PASSWORD: post_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring-boot-assignment-app
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_USERNAME: post_user
+      SPRING_DATASOURCE_PASSWORD: post_password
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql-data:
