@@ -10,7 +10,8 @@ cd spring-boot-assignment
 ```
 
 ## プロジェクト概要
-Spring Boot(3.5.x) と MyBatis を用いてシンプルな Post API を実装する面接課題です。候補者は API の作成に加え、レスポンスの共通フォーマット化とテスト作成を行います。アプリケーションは MySQL 8.x をデータソースとし、ローカル環境での動作と Docker Compose を利用した統合環境の両方をサポートしています。
+Spring Boot(3.5.x) と MyBatis を用いてシンプルな Post API を実装する課題です。
+候補者は API の作成に加え、レスポンスの共通フォーマット化を行います。
 
 ## 技術スタック
 - Java 17 (Temurin)
@@ -76,7 +77,7 @@ CREATE TABLE IF NOT EXISTS post (
 
 1. **投稿一覧取得（ページング）**
 2. **エラー応答の標準化**
-2.1 ErrorResponse・SuccessResponseオブジェクトを作成してください。
+2.1 ErrorResponse・SuccessListResponseオブジェクトを作成してください。
 Errorの場合、ErrorResponseを、Successの場合SuccessListResponseを返すようにAPIを作成してください。
 
 
