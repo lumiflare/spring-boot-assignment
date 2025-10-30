@@ -5,6 +5,8 @@
 
 ```bash
 git clone git@github.com:lumiflare/spring-boot-assignment.git
+# or
+git clone https://github.com/lumiflare/spring-boot-assignment.git
 
 cd spring-boot-assignment
 ```
