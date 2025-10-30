@@ -107,7 +107,6 @@ Errorの場合、ErrorResponseを、Successの場合SuccessListResponseを返す
   "message": "Invalid request",
   "field_errors": {
     "title": ["must not be blank"],
-    "content": ["must not be blank"]
   }
 }
 ```
